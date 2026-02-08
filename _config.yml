@@ -16,7 +16,7 @@ timezone: America/Los_Angeles
 
 title: Vishakh Menon # the main title
 
-tagline: ML, Robotics, and Optical Computing Research # it will display as the subtitle
+tagline: Physics-Aware Artificial Intelligence, AI for Science # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Academic website of Vishakh Menon, a UC Irvine CSE student focused on
@@ -99,7 +99,7 @@ theme_mode: light # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: "https://media.licdn.com/dms/image/v2/D5603AQFCegCArK6uAg/profile-displayphoto-scale_400_400/B56Zt9ffAdJIAg-/0/1767336964575?e=1772064000&v=beta&t=HrsFwla5MRsI8EPGMkuvONXU6g8txLsBD1OKooE2RuU"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
