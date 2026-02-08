@@ -12,37 +12,37 @@
 
 :root,
 html[data-mode='light'] {
-  --main-bg: #f5f6f8;
-  --main-border-color: #d5dae2;
-  --text-color: #212833;
-  --text-muted-color: #5a6473;
-  --heading-color: #1a2230;
-  --label-color: #4d5665;
-  --link-color: #1b4f8a;
-  --link-underline-color: #cfd6df;
-  --sidebar-bg: #fbfcfd;
-  --sidebar-border-color: #d8dde5;
-  --sidebar-muted-color: #4a5563;
-  --sidebar-active-color: #131a23;
-  --sidebar-hover-bg: #ebeff4;
+  --main-bg: #eff8ff;
+  --main-border-color: #cde0f1;
+  --text-color: #193047;
+  --text-muted-color: #4c6780;
+  --heading-color: #10273e;
+  --label-color: #3f5d78;
+  --link-color: #0f5c9f;
+  --link-underline-color: #c4d9ed;
+  --sidebar-bg: #f7fcff;
+  --sidebar-border-color: #d2e4f5;
+  --sidebar-muted-color: #4d6883;
+  --sidebar-active-color: #0f2438;
+  --sidebar-hover-bg: #e9f4ff;
   --sidebar-btn-bg: #ffffff;
-  --sidebar-btn-color: #6a7483;
-  --topbar-bg: rgb(251 252 253 / 90%);
-  --topbar-text-color: #2d3644;
-  --search-border-color: #d9dee6;
-  --search-icon-color: #8792a2;
-  --input-focus-border-color: #94a0b2;
+  --sidebar-btn-color: #5c7690;
+  --topbar-bg: rgb(247 252 255 / 92%);
+  --topbar-text-color: #26425d;
+  --search-border-color: #d2e4f4;
+  --search-icon-color: #7895af;
+  --input-focus-border-color: #82a6c6;
   --card-bg: #ffffff;
-  --post-list-text-color: #4d5867;
-  --academic-outline: linear-gradient(140deg, #d7dce4, #d7dce4);
-  --academic-outline-rainbow: linear-gradient(120deg, #ff5f6d, #ffc371, #8ef6a6, #64d8ff, #a68cff, #ff5f6d);
+  --post-list-text-color: #46637d;
+  --icy-outline-rainbow: linear-gradient(120deg, #ff9cb3, #ffdca7, #b8ffe4, #9ad9ff, #c8b9ff, #ff9cb3);
 }
 
 body {
   font-family: 'IBM Plex Sans', 'Segoe UI Variable Text', 'Segoe UI', sans-serif;
   background:
-    radial-gradient(circle at 10% -20%, rgb(255 255 255 / 95%), transparent 40%),
-    linear-gradient(180deg, #f8f9fb 0%, #eef1f5 100%);
+    radial-gradient(circle at 8% -20%, rgb(255 255 255 / 96%), transparent 42%),
+    radial-gradient(circle at 115% 5%, rgb(208 238 255 / 56%), transparent 32%),
+    linear-gradient(180deg, #f7fcff 0%, #eaf5ff 100%);
   color: var(--text-color);
 }
 
@@ -76,33 +76,32 @@ pre,
   border: 1px solid transparent;
   background-origin: border-box;
   background-clip: padding-box, border-box;
+  background-image: linear-gradient(var(--component-bg), var(--component-bg)), var(--icy-outline-rainbow);
+  background-size: 100% 100%, 280% 280%;
+  animation: icy-rainbow-drift 11s linear infinite;
 }
 
 #sidebar {
   --component-bg: var(--sidebar-bg);
   border-right: none;
-  background-image: linear-gradient(var(--component-bg), var(--component-bg)), var(--academic-outline);
 }
 
 #topbar-wrapper {
   --component-bg: var(--topbar-bg);
   border-radius: 0.9rem;
   backdrop-filter: blur(6px);
-  background-image: linear-gradient(var(--component-bg), var(--component-bg)), var(--academic-outline);
 }
 
 #panel-wrapper .access > section {
   --component-bg: var(--card-bg);
   border-radius: 0.9rem;
   padding: 1rem;
-  background-image: linear-gradient(var(--component-bg), var(--component-bg)), var(--academic-outline);
 }
 
 .card-wrapper.card {
   --component-bg: var(--card-bg);
   border-radius: 1rem;
-  background-image: linear-gradient(var(--component-bg), var(--component-bg)), var(--academic-outline);
-  box-shadow: 0 10px 24px rgb(15 23 42 / 5%);
+  box-shadow: 0 12px 30px rgb(19 50 85 / 8%);
 }
 
 .card-wrapper.card .card-body {
@@ -117,45 +116,39 @@ pre,
 .content h2 {
   margin-top: 2rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid #dce2ea;
+  border-bottom: 1px solid #d3e6f8;
 }
 
-#rainbow-outline-toggle {
-  width: 1.75rem;
-  height: 1.75rem;
-  margin-bottom: 0.5rem;
-  border-radius: 50%;
-  color: var(--sidebar-btn-color);
-  background-color: var(--sidebar-btn-bg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--sidebar-border-color) 0 0 0 1px;
+.blog-index {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.5rem;
 }
 
-#rainbow-outline-toggle:hover {
-  background-color: var(--sidebar-hover-bg);
-}
-
-#rainbow-outline-toggle.active {
-  color: #12263a;
-  background:
-    linear-gradient(rgb(255 255 255 / 85%), rgb(255 255 255 / 85%)) padding-box,
-    var(--academic-outline-rainbow) border-box;
+.blog-entry {
   border: 1px solid transparent;
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem;
+  background:
+    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    var(--icy-outline-rainbow) border-box;
   background-size: 100% 100%, 280% 280%;
+  animation: icy-rainbow-drift 11s linear infinite;
 }
 
-html.rainbow-outline #sidebar,
-html.rainbow-outline #topbar-wrapper,
-html.rainbow-outline #panel-wrapper .access > section,
-html.rainbow-outline .card-wrapper.card {
-  background-image: linear-gradient(var(--component-bg), var(--component-bg)), var(--academic-outline-rainbow);
-  background-size: 100% 100%, 320% 320%;
-  animation: academic-rainbow-drift 9s linear infinite;
+.blog-entry h2 {
+  margin-top: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
-@keyframes academic-rainbow-drift {
+.blog-meta {
+  color: var(--text-muted-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.55rem;
+}
+
+@keyframes icy-rainbow-drift {
   0% {
     background-position: 0% 50%;
   }
@@ -170,10 +163,11 @@ html.rainbow-outline .card-wrapper.card {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.rainbow-outline #sidebar,
-  html.rainbow-outline #topbar-wrapper,
-  html.rainbow-outline #panel-wrapper .access > section,
-  html.rainbow-outline .card-wrapper.card {
+  #sidebar,
+  #topbar-wrapper,
+  #panel-wrapper .access > section,
+  .card-wrapper.card,
+  .blog-entry {
     animation: none;
     background-size: 100% 100%, 100% 100%;
   }
